@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Please fill out all fields.');
             return;
         }
-
-       // Create feedback elements
        const feedbackItem = document.createElement('div');
        feedbackItem.classList.add('feedback-item');
        
@@ -33,10 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
        feedbackItem.appendChild(feedbackRating);
        feedbackItem.appendChild(feedbackComments);
 
-       // Append the feedback to the display area
        feedbackDisplay.appendChild(feedbackItem);
 
-       // Clear the form
        form.reset();
     });
 });
