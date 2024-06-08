@@ -16,24 +16,28 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const feedbackEntry = document.createElement('div');
-        feedbackEntry.classList.add('feedback-entry');
+       // Create feedback elements
+       const feedbackItem = document.createElement('div');
+       feedbackItem.classList.add('feedback-item');
+       
+       const feedbackName = document.createElement('h3');
+       feedbackName.textContent = `Name: ${name}`;
+       
+       const feedbackRating = document.createElement('p');
+       feedbackRating.textContent = `Rating: ${rating}`;
+       
+       const feedbackComments = document.createElement('p');
+       feedbackComments.textContent = `Comments: ${comments}`;
+       
+       feedbackItem.appendChild(feedbackName);
+       feedbackItem.appendChild(feedbackRating);
+       feedbackItem.appendChild(feedbackComments);
 
-        const feedbackName = document.createElement('p');
-        feedbackName.textContent = `Name: ${name}`;
-        feedbackEntry.appendChild(feedbackName);
+       // Append the feedback to the display area
+       feedbackDisplay.appendChild(feedbackItem);
 
-        const feedbackRating = document.createElement('p');
-        feedbackRating.textContent = `Rating: ${rating}`;
-        feedbackEntry.appendChild(feedbackRating);
-
-        const feedbackComments = document.createElement('p');
-        feedbackComments.textContent = `Comments: ${comments}`;
-        feedbackEntry.appendChild(feedbackComments);
-// Commit : "Implement form validation and feedback display logic."
-        feedbackDisplay.appendChild(feedbackEntry);
-
-        feedbackForm.reset();
+       // Clear the form
+       form.reset();
     });
 });
 // Commit: "Finalize feedback display functionality."
